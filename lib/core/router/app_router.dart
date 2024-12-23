@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:petsaurus/screens/auth/auth.dart';
+import 'package:petsaurus/screens/home/home.dart';
 import 'package:petsaurus/screens/splash/splash.dart';
 
 // import '../../presentation/intro/splash_page.dart';
@@ -37,43 +38,21 @@ class AppRouter {
         ],
       ),
 
-      // GoRoute(
-      //   name: RouteConstants.choise,
-      //   path: RouteConstants.choisePath,
-      //   builder: (context, state) => const Choise(),
-      //   routes: [
-      //     // GoRoute(
-      //     //   name: RouteConstants.verification,
-      //     //   path: RouteConstants.verificationPath,
-      //     //   builder: (context, state) => const VerificationPage(),
-      //     // ),
-      //     // GoRoute(
-      //     //   name: RouteConstants.register,
-      //     //   path: RouteConstants.registerPath,
-      //     //   builder: (context, state) => const RegisterPage(),
-      //     // ),
-      //   ],
-      // ),
+      GoRoute(
+        name: RouteConstants.root,
+        path: RouteConstants.rootPath,
+        builder: (context, state) {
+          final tabIndex =
+              int.tryParse(state.pathParameters['root_tab'] ?? '') ?? 0;
+          final tab = RootTab.fromIndex(tabIndex);
 
-      // GoRoute(
-      //   name: RouteConstants.root,
-      //   path: RouteConstants.rootPath,
-      //   builder: (context, state) => const DashboardPage(),
-      //   routes: [
-      //     // GoRoute(
-      //     //   name: RouteConstants.verification,
-      //     //   path: RouteConstants.verificationPath,
-      //     //   builder: (context, state) => const VerificationPage(),
-      //     // ),
-      //     // GoRoute(
-      //     //   name: RouteConstants.register,
-      //     //   path: RouteConstants.registerPath,
-      //     //   builder: (context, state) => const RegisterPage(),
-      //     // ),
-      //   ],
-      // ),
+          return Homepage(
+            key: state.pageKey,
+            currentTab: tab,
+          );
+        },
+      ),
 
-      // GoRoute(
       //     name: RouteConstants.root,
       //     path: RouteConstants.rootPath,
       //     builder: (context, state) {

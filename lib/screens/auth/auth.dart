@@ -77,7 +77,7 @@ class _LoginPageState extends State<LoginPage> {
                   padding: const EdgeInsets.symmetric(vertical: 15.0),
                 ),
                 onPressed: () {
-                  context.goNamed(
+                  context.pushReplacementNamed(
                     RouteConstants.root,
                     pathParameters: PathParameters().toMap(),
                   );
