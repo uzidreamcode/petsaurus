@@ -1,6 +1,7 @@
 // import 'package:fic12_flutter_starter/presentation/home/pages/dashboard_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:petsaurus/screens/splash/splash.dart';
 
 // import '../../presentation/intro/splash_page.dart';
 
@@ -12,11 +13,11 @@ class AppRouter {
   final router = GoRouter(
     initialLocation: RouteConstants.splashPath,
     routes: [
-      // GoRoute(
-      //   name: RouteConstants.splash,
-      //   path: RouteConstants.splashPath,
-      //   builder: (context, state) => const SplashPage(),
-      // ),
+      GoRoute(
+        name: RouteConstants.splash,
+        path: RouteConstants.splashPath,
+        builder: (context, state) => const SplashPage(),
+      ),
       // GoRoute(
       //   name: RouteConstants.login,
       //   path: RouteConstants.loginPath,
