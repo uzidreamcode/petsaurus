@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:lottie/lottie.dart';
 import 'package:petsaurus/core/constants/colors.dart';
+import 'package:petsaurus/core/router/app_router.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -74,7 +76,12 @@ class _LoginPageState extends State<LoginPage> {
                   backgroundColor: AppColors.primary,
                   padding: const EdgeInsets.symmetric(vertical: 15.0),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  context.goNamed(
+                    RouteConstants.root,
+                    pathParameters: PathParameters().toMap(),
+                  );
+                },
                 child: const Text(
                   'Login',
                   style: TextStyle(
