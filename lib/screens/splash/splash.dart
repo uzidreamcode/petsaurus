@@ -22,7 +22,11 @@ class _SplashPageState extends State<SplashPage> {
     // Cek status autentikasi pengguna
 
     // Tunggu sebentar dan arahkan ke halaman yang tepat
-    await Future.delayed(const Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 5));
+
+    context.pushNamed(
+      RouteConstants.login,
+    );
 
     // Jika sudah login, arahkan ke halaman utama; jika belum login, arahkan ke halaman login
     // if (!isAuth) {

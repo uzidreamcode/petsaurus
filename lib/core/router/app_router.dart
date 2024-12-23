@@ -1,6 +1,7 @@
 // import 'package:fic12_flutter_starter/presentation/home/pages/dashboard_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:petsaurus/screens/auth/auth.dart';
 import 'package:petsaurus/screens/splash/splash.dart';
 
 // import '../../presentation/intro/splash_page.dart';
@@ -18,23 +19,23 @@ class AppRouter {
         path: RouteConstants.splashPath,
         builder: (context, state) => const SplashPage(),
       ),
-      // GoRoute(
-      //   name: RouteConstants.login,
-      //   path: RouteConstants.loginPath,
-      //   builder: (context, state) => const LoginPage(),
-      //   routes: [
-      //     // GoRoute(
-      //     //   name: RouteConstants.verification,
-      //     //   path: RouteConstants.verificationPath,
-      //     //   builder: (context, state) => const VerificationPage(),
-      //     // ),
-      //     // GoRoute(
-      //     //   name: RouteConstants.register,
-      //     //   path: RouteConstants.registerPath,
-      //     //   builder: (context, state) => const RegisterPage(),
-      //     // ),
-      //   ],
-      // ),
+      GoRoute(
+        name: RouteConstants.login,
+        path: RouteConstants.loginPath,
+        builder: (context, state) => const LoginPage(),
+        routes: [
+          // GoRoute(
+          //   name: RouteConstants.verification,
+          //   path: RouteConstants.verificationPath,
+          //   builder: (context, state) => const VerificationPage(),
+          // ),
+          // GoRoute(
+          //   name: RouteConstants.register,
+          //   path: RouteConstants.registerPath,
+          //   builder: (context, state) => const RegisterPage(),
+          // ),
+        ],
+      ),
 
       // GoRoute(
       //   name: RouteConstants.choise,
